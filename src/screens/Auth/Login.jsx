@@ -59,6 +59,7 @@ const Login = () => {
         setLoader(false);
         try {
           await AsyncStorage.setItem('token', JSON.stringify(res?.data));
+          toNavigation();
           await updateRedux(res?.data);
         } catch (error) {
           console.log(error, 'token error');
@@ -81,7 +82,7 @@ const Login = () => {
     Navigation.dispatch(
       CommonActions.reset({
         index: 0,
-        routes: [{name: 'ProductsList'}],
+        routes: [{name: 'Tabs'}],
       }),
     );
   }

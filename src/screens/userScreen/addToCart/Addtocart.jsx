@@ -27,8 +27,7 @@ const Addtocart = ({route}) => {
   const dispatch = useDispatch();
   const [visible, setVisible] = useState(false);
 
-  const cart = useSelector(state => state?.cart?.cartItem);
-  console.log(cart?.totalAmount, 'cartttt');
+  const cart = useSelector(state => console.log(state.addCart, 'cartttt'));
 
   const removeproduct = item => {
     dispatch(remove(item));
