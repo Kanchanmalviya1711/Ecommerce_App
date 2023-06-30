@@ -20,7 +20,6 @@ const UserProfile = () => {
   const Navigation = useNavigation();
 
   const fetchProfile = useSelector(state => state?.token?.email?.user);
-  const {name, email, gender, id} = fetchProfile;
 
   const onPress = async () => {
     try {
@@ -53,7 +52,7 @@ const UserProfile = () => {
             color: 'white',
             fontWeight: 'bold',
           }}>
-          Hey,{name}
+          Hey,{fetchProfile?.name}
         </Text>
         <Text
           style={{
@@ -62,7 +61,7 @@ const UserProfile = () => {
             color: '#FFFAFA',
             fontSize: 16,
           }}>
-          {email}
+          {fetchProfile?.email}
         </Text>
         <LinearGradient
           colors={['#642B73', '#C6426E']}
@@ -85,19 +84,19 @@ const UserProfile = () => {
         </View>
         <View style={styles.infoView}>
           <Text style={styles.infoText}>NAME </Text>
-          <Text style={styles.infoText}>{name}</Text>
+          <Text style={styles.infoText}>{fetchProfile?.name}</Text>
         </View>
         <View style={styles.infoView}>
           <Text style={styles.infoText}>GENDER </Text>
-          <Text style={styles.infoText}>{gender}</Text>
+          <Text style={styles.infoText}>{fetchProfile?.gender}</Text>
         </View>
         <View style={styles.infoView}>
           <Text style={styles.infoText}>EMAIL </Text>
-          <Text style={styles.infoText}>{email}</Text>
+          <Text style={styles.infoText}>{fetchProfile?.email}</Text>
         </View>
         <View style={styles.infoView}>
           <Text style={styles.infoText}>USERNAME ID</Text>
-          <Text style={styles.infoText}>{id}</Text>
+          <Text style={styles.infoText}>{fetchProfile?.id}</Text>
         </View>
       </View>
       <View>

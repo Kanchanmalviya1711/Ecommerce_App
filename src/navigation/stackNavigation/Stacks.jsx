@@ -8,6 +8,7 @@ import Tabs from '../tabNavigation/Tabs';
 import ProductsList from '../../screens/userScreen/products/ProductsList';
 import ProductsDetail from '../../screens/userScreen/productDetail/ProductsDetail';
 import OrderSuccess from '../../screens/userScreen/orderSuccess/OrderSuccess';
+import AdminPage from '../../screens/AdminScreen/AdminPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,10 +45,14 @@ const Stacks = () => {
         component={ProductsDetail}
         options={{headerShown: false}}
       />
-
       <Stack.Screen
         name="OrderSuccess"
         component={OrderSuccess}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AdminPage"
+        component={AdminPage}
         options={{headerShown: false}}
       />
 

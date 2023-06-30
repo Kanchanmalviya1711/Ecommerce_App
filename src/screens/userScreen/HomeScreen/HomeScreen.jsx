@@ -10,11 +10,15 @@ import React from 'react';
 import {Button, Card} from '@rneui/themed';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+
+const {width, height} = Dimensions.get('window');
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
   const Navigation = useNavigation();
+
+  const fetchProfile = useSelector(state => state?.token?.email?.user);
 
   const img = [
     require('../../../../assets/img/cart.jpg'),
@@ -26,16 +30,14 @@ const HomeScreen = () => {
     <View style={{flex: 1, backgroundColor: '#fff'}}>
       <View style={styles.baseStyle}>
         <View>
-          <Text style={{fontSize: 20, color: '#5F9EA0'}}>
-            😍 Good To See You
-          </Text>
+          <Text style={{fontSize: 20, color: '#5F9EA0'}}>Good To See You</Text>
           <Text
             style={{
               color: 'black',
               fontSize: 20,
-              textAlign: 'center',
+              textAlign: 'left',
             }}>
-            Kanchan Malviya
+            😍 {fetchProfile?.name}
           </Text>
         </View>
 
@@ -58,7 +60,7 @@ const HomeScreen = () => {
       <View>
         <Image
           source={require('../../../../assets/img/BestImages.png')}
-          style={{height: 300}}
+          style={{height: height / 2.5, width: width}}
         />
       </View>
 

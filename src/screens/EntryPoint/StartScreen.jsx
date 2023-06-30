@@ -39,7 +39,7 @@ const StartScreen = () => {
           />
           <Text
             style={styles.headingAdminLogin}
-            onPress={() => Navigation.navigate('Login')}>
+            onPress={() => Navigation.navigate('AdminPage')}>
             Admin
           </Text>
         </View>
