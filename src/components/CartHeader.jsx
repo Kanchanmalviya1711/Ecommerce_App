@@ -21,7 +21,9 @@ const CartHeader = () => {
     dispatch(clearCart());
     setModalVisible(false);
   };
-  const cart = useSelector(state => state?.cart?.cartItem);
+  const cart = useSelector(state => state.addCart.cartItem);
+  console.log(cart, 'cartItem');
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
