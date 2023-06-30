@@ -73,6 +73,7 @@ const CartHeader = () => {
     </View>
   );
 };
+export default CartHeader;
 
 const styles = StyleSheet.create({
   container: {
@@ -80,8 +81,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 5,
-    opacity: 0.7,
-    backgroundColor: 'black',
+    backgroundColor: '#48b1bf',
   },
   openButtonText: {
     margin: 10,
@@ -110,5 +110,3 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
 });
-
-export default CartHeader;

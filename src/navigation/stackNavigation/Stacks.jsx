@@ -5,6 +5,9 @@ import StartScreen from '../../screens/EntryPoint/StartScreen';
 import Login from '../../screens/Auth/Login';
 import Register from '../../screens/Auth/Register';
 import Tabs from '../tabNavigation/Tabs';
+import ProductsList from '../../screens/userScreen/products/ProductsList';
+import ProductsDetail from '../../screens/userScreen/productDetail/ProductsDetail';
+import OrderSuccess from '../../screens/userScreen/orderSuccess/OrderSuccess';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +34,23 @@ const Stacks = () => {
         component={Register}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name="ProductsList"
+        component={ProductsList}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ProductDetail"
+        component={ProductsDetail}
+        options={{headerShown: false}}
+      />
+
+      <Stack.Screen
+        name="OrderSuccess"
+        component={OrderSuccess}
+        options={{headerShown: false}}
+      />
+
       <Stack.Screen
         name="Tabs"
         component={Tabs}

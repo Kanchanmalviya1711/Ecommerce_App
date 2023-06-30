@@ -27,7 +27,8 @@ const Addtocart = ({route}) => {
   const dispatch = useDispatch();
   const [visible, setVisible] = useState(false);
 
-  const cart = useSelector(state => console.log(state.addCart, 'cartttt'));
+  const cart = useSelector(state => state.addCart.cartItem);
+  console.log(cart, 'cart');
 
   const removeproduct = item => {
     dispatch(remove(item));
@@ -49,7 +50,7 @@ const Addtocart = ({route}) => {
   };
   const placedOrder = () => {
     setVisible(!visible);
-    Navigation.navigate('ordersuccess');
+    Navigation.navigate('OrderSuccess');
     dispatch(clearCart());
   };
   return (
@@ -148,8 +149,6 @@ const Addtocart = ({route}) => {
               )}
             />
             <View>
-              <Hr lineColor="black" width={2} text="Price Details" />
-
               <View style={styles.pricedetail}>
                 <View
                   style={{
