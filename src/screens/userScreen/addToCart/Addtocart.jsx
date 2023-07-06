@@ -28,8 +28,6 @@ const Addtocart = ({route}) => {
   const [visible, setVisible] = useState(false);
 
   const cart = useSelector(state => state.addCart.cartItem);
-  // console.log(cart.totalAmount, 'add to cart ');
-
   const grandTotal = useSelector(state => state.addCart.totalAmount);
 
   const removeproduct = item => {

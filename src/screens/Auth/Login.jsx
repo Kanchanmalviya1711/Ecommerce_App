@@ -8,6 +8,7 @@ import {
   Keyboard,
   ToastAndroid,
   Image,
+  TouchableHighlight,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
@@ -216,6 +217,24 @@ const Login = () => {
                   Login
                 </Text>
               )}
+            </TouchableOpacity>
+          </View>
+
+          <View style={{padding: 10}}>
+            <Text style={{color: 'white', textAlign: 'center', fontSize: 15}}>
+              Dont Have An Account Please
+            </Text>
+            <TouchableOpacity onPress={() => Navigation.navigate('Register')}>
+              <Text
+                style={{
+                  color: '#1CB5E0',
+                  textAlign: 'center',
+                  fontSize: 20,
+                  fontWeight: 600,
+                  margin: 10,
+                }}>
+                Sign Up
+              </Text>
             </TouchableOpacity>
           </View>
         </KeyboardAwareScrollView>
