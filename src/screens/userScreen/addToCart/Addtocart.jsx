@@ -28,7 +28,9 @@ const Addtocart = ({route}) => {
   const [visible, setVisible] = useState(false);
 
   const cart = useSelector(state => state.addCart.cartItem);
-  console.log(cart, 'cart');
+  // console.log(cart.totalAmount, 'add to cart ');
+
+  const grandTotal = useSelector(state => state.addCart.totalAmount);
 
   const removeproduct = item => {
     dispatch(remove(item));
@@ -184,7 +186,9 @@ const Addtocart = ({route}) => {
                     style={{fontSize: 17, color: 'black', fontWeight: 'bold'}}>
                     Grand Total
                   </Text>
-                  <Text style={{fontSize: 15, color: 'black'}}>890000</Text>
+                  <Text style={{fontSize: 15, color: 'black'}}>
+                    {<FormatePrice price={grandTotal} />} {}
+                  </Text>
                 </View>
 
                 <TouchableOpacity

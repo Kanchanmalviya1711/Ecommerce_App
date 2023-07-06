@@ -92,7 +92,7 @@ export const cartSlice = createSlice({
           const itemTotal = price * cartQuantity;
           cartTotal.total += itemTotal;
           cartTotal.quantity += cartQuantity;
-
+          console.log(cartTotal, 'vcbxxxxxx');
           return cartTotal;
         },
         {
